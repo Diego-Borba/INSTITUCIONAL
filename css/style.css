@@ -1,0 +1,92 @@
+/* Documentação:
+   Este arquivo CSS personaliza as cores padrão do Bootstrap
+   para combinar com a identidade visual da Escolinha de Futebol.
+*/
+
+/* 1. Variáveis de Cor:
+   Definimos as cores principais em variáveis para facilitar a manutenção.
+   Se um dia precisar mudar uma cor, só precisa mudar aqui.
+*/
+:root {
+  --azul-principal: rgb(26, 74, 141); /* Azul forte do escudo */
+  --amarelo-destaque: rgb(240, 173, 78); /* Amarelo da borda do escudo */
+  --azul-escuro: rgb(15, 43, 78);     /* Um tom de azul quase preto para fundos */
+  --texto-claro: rgb(255, 255, 255);       /* Branco */
+  --fundo-claro: rgb(248, 249, 250);      /* Cinza bem claro para seções */
+}
+
+/* 2. Estilos Gerais:
+   Aplicamos as cores nos principais elementos do site.
+*/
+
+/* Cabeçalho e Rodapé */
+/* Trocamos o 'bg-dark' para usar nosso azul principal, mais vibrante */
+.bg-dark {
+    background-color: var(--azul-principal) !important; /* Azul forte do escudo */
+}
+
+/* Títulos */
+/* Todos os títulos (h1, h2, etc.) terão o tom azul escuro */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--azul-escuro);
+}
+
+/* Botões */
+/* Personalizamos os botões primários para usar nosso azul principal */
+.btn-primary {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.btn-primary:hover {
+    opacity: 0.9; /* Efeito suave ao passar o mouse */
+}
+
+/* O botão 'Sign-up' (agora btn-warning) usará nosso amarelo */
+.btn-warning {
+    background-color: var(--amarelo-destaque);
+    border-color: var(--amarelo-destaque);
+    color: var(--azul-escuro); /* Cor do texto do botão */
+}
+.btn-warning:hover {
+    opacity: 0.9;
+}
+
+/* Links */
+/* Os links do menu do rodapé */
+footer a {
+    color: var(--texto-claro) !important;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Links do menu principal */
+.navbar-nav .nav-link, .nav-link {
+    color: var(--texto-claro);
+}
+
+.nav-link.text-secondary {
+    color: var(--amarelo-destaque) !important; /* Cor para a página ativa */
+}
+
+header img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 20%; /* Torna a imagem circular */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom suave ao passar o mouse no logo */
+header img:hover {
+    transform: scale(1.05); /* Aumenta o logo em 5% */
+}
+
+/* Adiciona um fundo sutil e arredondado quando passamos o mouse nos links do menu */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Um branco com 10% de opacidade */
+    transition: background-color 0.3s ease; /* Transição suave */
+    /*border-radius: 5px; /* Bordas arredondadas */
+}
