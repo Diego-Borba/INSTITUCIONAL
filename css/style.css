@@ -90,3 +90,60 @@ header img:hover {
     transition: background-color 0.3s ease; /* Transição suave */
     /*border-radius: 5px; /* Bordas arredondadas */
 }
+/* 3. Estilos para os Cards de Notícias:
+   Garantimos que todos os cards tenham a mesma altura e que o conteúdo
+   interno (imagem e texto) se alinhe corretamente.
+*/
+
+/* Define uma altura fixa para o card e o transforma em um container flexível */
+.card {
+    height: 500px; /* Você pode ajustar este valor conforme sua preferência */
+    display: flex;
+    flex-direction: column; /* Organiza os itens internos em coluna (imagem em cima, texto embaixo) */
+}
+
+/* Define uma altura fixa para a imagem e garante que ela preencha o espaço sem distorcer */
+.card-img-top {
+    height: 250px; /* Altura fixa para a área da imagem */
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço, cortando o excesso se necessário */
+    width: 100%;
+}
+
+/* Faz com que a área de texto do card ocupe todo o espaço vertical restante */
+.card-body {
+    flex-grow: 1; /* Permite que este elemento "cresça" e ocupe o espaço disponível */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo do corpo do card em coluna */
+}
+
+/* Garante que o parágrafo do texto não empurre o botão para fora do card */
+.card-body .card-text {
+    flex-grow: 1; /* Ocupa o espaço disponível, empurrando o botão para o final */
+}
+
+/* 4. Estilos para a Página de Regulamento */
+.regulamento-content {
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para facilitar a leitura */
+}
+
+.regulamento-content h1 {
+    border-bottom: 2px solid var(--azul-principal); /* Adiciona uma linha abaixo do título principal */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.regulamento-content h2.section-title {
+    color: var(--azul-principal);
+    margin-top: 40px; /* Adiciona um espaço acima de cada nova seção */
+    margin-bottom: 20px;
+}
+
+.regulamento-content h3.subsection-title {
+    color: var(--azul-escuro);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.regulamento-content p {
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+}
