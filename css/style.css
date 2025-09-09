@@ -13,6 +13,10 @@
 }
 
 /* 2. Estilos Gerais */
+body {
+    line-height: 1.6;
+}
+
 .bg-dark {
     background-color: var(--azul-principal) !important;
 }
@@ -33,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-warning {
     background-color: var(--amarelo-destaque);
     border-color: var(--amarelo-destaque);
-    color: var(--azul-escuro);
+    color: var(--azul-escuro) !important;
 }
 .btn-warning:hover {
     opacity: 0.9;
@@ -72,41 +76,53 @@ header img:hover {
     transition: background-color 0.3s ease;
 }
 
-/* 3. Estilos para a Página de Regulamento */
-.regulamento-content {
-    line-height: 1.6;
+/* 3. Estilos para a Página de Regulamento Formatado */
+.regulamento-formatado {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.regulamento-content h1 {
-    border-bottom: 2px solid var(--azul-principal);
-    padding-bottom: 10px;
+.regulamento-formatado h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
     margin-bottom: 30px;
+    border-bottom: 2px solid var(--azul-principal);
+    padding-bottom: 15px;
 }
 
-.regulamento-content h2.section-title {
+.regulamento-formatado h2 {
+    font-size: 1.5rem;
     color: var(--azul-principal);
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-.regulamento-content h3.subsection-title {
-    color: var(--azul-escuro);
-    margin-top: 25px;
+.regulamento-formatado p, .regulamento-formatado li {
+    text-align: justify;
     margin-bottom: 15px;
 }
 
-.regulamento-content p {
-    margin-bottom: 15px;
+.regulamento-formatado ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.regulamento-formatado .assinatura {
+    margin-top: 60px;
+    text-align: center;
 }
 
 /* 4. Estilos para a Seção Hero (Home) */
 #home-hero {
   background-image: 
     linear-gradient(rgba(26, 74, 141, 0.7), rgba(15, 43, 78, 0.8)), 
-    url('../img/banner.jpg'); /* Assumindo que você renomeou o arquivo para banner.jpg */
+    url('../img/banner.jpg');
   
   background-size: cover;
-  background-position: center top; /* Corrigido para mostrar os rostos */
+  background-position: center top;
   padding-left: 0;
   padding-right: 0;
   max-width: 100%;
@@ -137,16 +153,95 @@ header img:hover {
     cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
 }
 
-/* Deixa as setas do carrossel interno (dentro do card) menores */
+/* ESTILOS PARA AS SETAS DOS CARDS INTERNOS (AJUSTADOS) */
 #noticiasCarousel .card-img-top .carousel-control-prev,
 #noticiasCarousel .card-img-top .carousel-control-next {
-    width: 10%;
+    width: 20px; /* Largura reduzida para as áreas clicáveis */
+    opacity: 0.7; /* Um pouco de transparência */
+    transition: opacity 0.3s ease;
+}
+
+#noticiasCarousel .card-img-top .carousel-control-prev:hover,
+#noticiasCarousel .card-img-top .carousel-control-next:hover {
+    opacity: 1; /* Retorna a opacidade total no hover */
 }
 
 #noticiasCarousel .card-img-top .carousel-control-prev-icon,
 #noticiasCarousel .card-img-top .carousel-control-next-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem; /* Tamanho do ícone da seta */
+    height: 1rem; /* Tamanho do ícone da seta */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro */
+    border-radius: 50%; /* Mantém o formato circular */
+    padding: 0.8rem; /* Espaçamento interno menor */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILOS PARA OS INDICADORES DOS CARDS INTERNOS */
+#noticiasCarousel .card-img-top .carousel-indicators {
+    bottom: 5px; /* Posição na parte inferior da imagem */
+    margin-bottom: 0;
+}
+
+#noticiasCarousel .card-img-top .carousel-indicators button {
+    width: 8px; /* Tamanho das bolinhas */
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6); /* Cor das bolinhas */
+    border: none;
+    margin: 0 3px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#noticiasCarousel .card-img-top .carousel-indicators button.active {
+    background-color: var(--amarelo-destaque); /* Bolinha ativa com cor de destaque */
+    opacity: 1;
+}
+
+/* Estiliza a imagem dentro do modal de zoom */
+#modalImage {
+    max-height: 90vh;
+    border-radius: 5px;
+}
+
+/* 5. Estilos para o Carrossel de Notícias */
+.news-image {
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Ajusta as setas do carrossel para ficarem discretas */
+#newsCarousel .carousel-control-prev,
+#newsCarousel .carousel-control-next {
+    width: auto; /* Largura automática */
+    transform: translateY(-20px); /* Move as setas um pouco para cima */
+}
+
+/* Posiciona as setas nas laterais do container */
+#newsCarousel .carousel-control-prev {
+    left: -50px;
+}
+#newsCarousel .carousel-control-next {
+    right: -50px;
+}
+
+#newsCarousel .carousel-control-prev-icon,
+#newsCarousel .carousel-control-next-icon {
+    background-color: var(--azul-escuro);
+    border-radius: 50%;
+    padding: 1.2rem;
+    background-size: 50%;
+}
+
+/* Oculta as setas em ecrãs muito pequenos para não sobrepor */
+@media (max-width: 767px) {
+    #newsCarousel .carousel-control-prev,
+    #newsCarousel .carousel-control-next {
+        display: none;
+    }
 }
 
 /* Estiliza a imagem dentro do modal de zoom */
