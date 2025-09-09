@@ -28,43 +28,45 @@
 
 <main class="container py-5 text-center">
   <h1 class="mb-4">Regulamento de Compras e Contratações</h1>
-  <p>O download do regulamento será iniciado automaticamente. Caso não inicie, utilize os botões abaixo:</p>
+  <p>O download do regulamento será iniciado automaticamente. Caso não inicie, utilize o botão abaixo:</p>
 
-  <!-- BOTÃO DE DOWNLOAD DOCX -->
-  <a href="https://github.com/Diego-Borba/INSTITUCIONAL/raw/main/Regulamento_de_Compras_e_Contratacao_de_Servicos_EFEC_assinado.docx"
+  <!-- BOTÃO DE DOWNLOAD PDF -->
+  <a href="https://github.com/Diego-Borba/INSTITUCIONAL/raw/main/Regulamento_de_Compras_e_Contratacao_de_Servicos_EFEC.pdf"
      class="btn btn-primary btn-lg mt-3" download>
     📥 Baixar Regulamento (PDF)
   </a>
 </main>
 
+<!-- SCRIPT DE DOWNLOAD AUTOMÁTICO -->
 <script>
   window.onload = function() {
     const link = document.createElement('a');
-    link.href = "https://github.com/Diego-Borba/INSTITUCIONAL/raw/main/Regulamento_de_Compras_e_Contratacao_de_Servicos_EFEC_assinado.docx";
-    link.download = "Regulamento_EFEC.docx"; // nome sugerido no download
+    link.href = "https://github.com/Diego-Borba/INSTITUCIONAL/raw/main/Regulamento_de_Compras_e_Contratacao_de_Servicos_EFEC.pdf";
+    link.download = "Regulamento_EFEC.pdf"; // nome sugerido no download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   }
 </script>
 
-<footer id="contato" class="py-5 bg-dark text-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h5>Contato</h5>
-        <p>Endereço: Loteamento Campo Alegre N° 110, Centro, Cumaru 55655-000</p>
-        <p>Email: contato@efec.com</p>
-        <p>Telefone: (81) 1234-5678</p>
-      </div>
-      <div class="col-md-6">
-        <h5>Siga-nos</h5>
-        <a href="https://www.instagram.com/efec.of?igsh=d2NjbTBpN253MWI3" target="_blank">Instagram</a>
-      </div>
-    </div>
-    <p class="text-center mt-4">&copy; 2025 EFEC. Todos os direitos reservados.</p>
-  </div>
-</footer>
+
+    <footer id="contato" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contato</h5>
+                    <p>Endereço: Loteamento Campo Alegre N° 110, Centro, Cumaru 55655-000</p>
+                    <p>Email: se19silva@gmail.com</p>
+                    <p>Telefone: (81) 9139-9283</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Siga-nos</h5>
+                    <a href="https://www.instagram.com/efec.of?igsh=d2NjbTBpN253MWI3" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <p class="text-center mt-4">&copy; 2025 EFEC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
