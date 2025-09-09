@@ -3,57 +3,42 @@
    para combinar com a identidade visual da Escolinha de Futebol.
 */
 
-/* 1. Variáveis de Cor:
-   Definimos as cores principais em variáveis para facilitar a manutenção.
-   Se um dia precisar mudar uma cor, só precisa mudar aqui.
-*/
+/* 1. Variáveis de Cor */
 :root {
-  --azul-principal: rgb(26, 74, 141); /* Azul forte do escudo */
-  --amarelo-destaque: rgb(240, 173, 78); /* Amarelo da borda do escudo */
-  --azul-escuro: rgb(15, 43, 78);     /* Um tom de azul quase preto para fundos */
-  --texto-claro: rgb(255, 255, 255);       /* Branco */
-  --fundo-claro: rgb(248, 249, 250);      /* Cinza bem claro para seções */
+  --azul-principal: rgb(26, 74, 141);
+  --amarelo-destaque: rgb(240, 173, 78);
+  --azul-escuro: rgb(15, 43, 78);
+  --texto-claro: rgb(255, 255, 255);
+  --fundo-claro: rgb(248, 249, 250);
 }
 
-/* 2. Estilos Gerais:
-   Aplicamos as cores nos principais elementos do site.
-*/
-
-/* Cabeçalho e Rodapé */
-/* Trocamos o 'bg-dark' para usar nosso azul principal, mais vibrante */
+/* 2. Estilos Gerais */
 .bg-dark {
-    background-color: var(--azul-principal) !important; /* Azul forte do escudo */
+    background-color: var(--azul-principal) !important;
 }
 
-/* Títulos */
-/* Todos os títulos (h1, h2, etc.) terão o tom azul escuro */
 h1, h2, h3, h4, h5, h6 {
     color: var(--azul-escuro);
 }
 
-/* Botões */
-/* Personalizamos os botões primários para usar nosso azul principal */
 .btn-primary {
     background-color: var(--azul-principal);
     border-color: var(--azul-principal);
 }
 
 .btn-primary:hover {
-    opacity: 0.9; /* Efeito suave ao passar o mouse */
+    opacity: 0.9;
 }
 
-/* O botão 'Sign-up' (agora btn-warning) usará nosso amarelo */
 .btn-warning {
     background-color: var(--amarelo-destaque);
     border-color: var(--amarelo-destaque);
-    color: var(--azul-escuro); /* Cor do texto do botão */
+    color: var(--azul-escuro);
 }
 .btn-warning:hover {
     opacity: 0.9;
 }
 
-/* Links */
-/* Os links do menu do rodapé */
 footer a {
     color: var(--texto-claro) !important;
     text-decoration: none;
@@ -62,79 +47,45 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Links do menu principal */
 .navbar-nav .nav-link, .nav-link {
     color: var(--texto-claro);
 }
 
 .nav-link.text-secondary {
-    color: var(--amarelo-destaque) !important; /* Cor para a página ativa */
+    color: var(--amarelo-destaque) !important;
 }
 
 header img {
     height: 40px;
     width: 40px;
     object-fit: cover;
-    border-radius: 20%; /* Torna a imagem circular */
+    border-radius: 20%;
     transition: transform 0.3s ease;
 }
 
-/* Efeito de zoom suave ao passar o mouse no logo */
 header img:hover {
-    transform: scale(1.05); /* Aumenta o logo em 5% */
+    transform: scale(1.05);
 }
 
-/* Adiciona um fundo sutil e arredondado quando passamos o mouse nos links do menu */
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Um branco com 10% de opacidade */
-    transition: background-color 0.3s ease; /* Transição suave */
-    /*border-radius: 5px; /* Bordas arredondadas */
-}
-/* 3. Estilos para os Cards de Notícias:
-   Garantimos que todos os cards tenham a mesma altura e que o conteúdo
-   interno (imagem e texto) se alinhe corretamente.
-*/
-
-/* Define uma altura fixa para o card e o transforma em um container flexível */
-.card {
-    height: 500px; /* Você pode ajustar este valor conforme sua preferência */
-    display: flex;
-    flex-direction: column; /* Organiza os itens internos em coluna (imagem em cima, texto embaixo) */
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-/* Define uma altura fixa para a imagem e garante que ela preencha o espaço sem distorcer */
-.card-img-top {
-    height: 250px; /* Altura fixa para a área da imagem */
-    object-fit: cover; /* Faz a imagem cobrir todo o espaço, cortando o excesso se necessário */
-    width: 100%;
-}
-
-/* Faz com que a área de texto do card ocupe todo o espaço vertical restante */
-.card-body {
-    flex-grow: 1; /* Permite que este elemento "cresça" e ocupe o espaço disponível */
-    display: flex;
-    flex-direction: column; /* Organiza o conteúdo do corpo do card em coluna */
-}
-
-/* Garante que o parágrafo do texto não empurre o botão para fora do card */
-.card-body .card-text {
-    flex-grow: 1; /* Ocupa o espaço disponível, empurrando o botão para o final */
-}
-
-/* 4. Estilos para a Página de Regulamento */
+/* 3. Estilos para a Página de Regulamento */
 .regulamento-content {
-    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para facilitar a leitura */
+    line-height: 1.6;
 }
 
 .regulamento-content h1 {
-    border-bottom: 2px solid var(--azul-principal); /* Adiciona uma linha abaixo do título principal */
+    border-bottom: 2px solid var(--azul-principal);
     padding-bottom: 10px;
     margin-bottom: 30px;
 }
 
 .regulamento-content h2.section-title {
     color: var(--azul-principal);
-    margin-top: 40px; /* Adiciona um espaço acima de cada nova seção */
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
@@ -145,5 +96,61 @@ header img:hover {
 }
 
 .regulamento-content p {
-    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 15px;
+}
+
+/* 4. Estilos para a Seção Hero (Home) */
+#home-hero {
+  background-image: 
+    linear-gradient(rgba(26, 74, 141, 0.7), rgba(15, 43, 78, 0.8)), 
+    url('../img/banner.jpg'); /* Assumindo que você renomeou o arquivo para banner.jpg */
+  
+  background-size: cover;
+  background-position: center top; /* Corrigido para mostrar os rostos */
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
+#home-hero h1 {
+  color: var(--texto-claro);
+  font-weight: 600 !important;
+}
+
+#home-hero .lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 5. Estilos para Carrossel de Notícias */
+/* Ajusta as setas do carrossel principal para ficarem mais visíveis */
+#noticiasCarousel .carousel-control-prev-icon,
+#noticiasCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+
+/* Garante que a imagem dentro do carrossel do card ocupe o espaço corretamente */
+#noticiasCarousel .card-img-top .carousel-item img {
+    height: 350px; /* Altura fixa para as imagens da galeria */
+    object-fit: cover;
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+}
+
+/* Deixa as setas do carrossel interno (dentro do card) menores */
+#noticiasCarousel .card-img-top .carousel-control-prev,
+#noticiasCarousel .card-img-top .carousel-control-next {
+    width: 10%;
+}
+
+#noticiasCarousel .card-img-top .carousel-control-prev-icon,
+#noticiasCarousel .card-img-top .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Estiliza a imagem dentro do modal de zoom */
+#modalImage {
+    max-height: 90vh;
+    border-radius: 5px;
 }
